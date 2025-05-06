@@ -1,7 +1,7 @@
 Producer/obj/
 Producer/bin/
 Domain/MicroRabbit.Domain.Core/obj/
-/MicroRabbit.Domain.Core/obj/Debug/net8.0
-/.vs/MicroRabbit/v17/.suo
 /MicroRabbit.Domain.Core/obj
-/.vs/MicroRabbit/FileContentIndex/783695df-6d06-4ab9-bc0f-3ecafd489bb2.vsidx
+/.vs/
+/MicroRabbit.Domain.Core/obj
+/MicroRabbit.Domain.Core/bin/Debug/net8.0
