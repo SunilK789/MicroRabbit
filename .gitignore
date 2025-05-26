@@ -11,3 +11,6 @@ Domain/MicroRabbit.Domain.Core/obj/
 /MicroRabbit.Infra.Bus/bin/Debug/net8.0/MicroRabbit.Infra.Bus.deps.json
 /MicroRabbit.Infra.IoC/obj/Debug/net8.0
 /MicroRabbit.Infra.IoC/obj
+*.json
+*.dll
+/MicroRabbit.Infra.IoC/bin/Debug/net8.0
