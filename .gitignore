@@ -14,3 +14,8 @@ Domain/MicroRabbit.Domain.Core/obj/
 *.json
 *.dll
 /MicroRabbit.Infra.IoC/bin/Debug/net8.0
+/MicroRabbit.Banking.Api/obj/Debug/net8.0
+/MicroRabbit.Banking.Api/obj
+/MicroRabbit.Banking.Application/obj
+/MicroRabbit.Banking.Data/obj
+/MicroRabbit.Banking.Domain/obj
