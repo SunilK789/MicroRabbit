@@ -1,49 +1,20 @@
-
-using MicroRabbit.Banking.Data.Context;
-using MicroRabbit.Infra.IoC;
-using Microsoft.EntityFrameworkCore;
-
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        // Manually instantiate Startup
+        var startup = new Startup(builder.Configuration);
 
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        //builder.Services.AddMediatR(typeof(Program));
-
-        RegisterServices(builder.Services, builder.Configuration);
+        // Call ConfigureServices
+        startup.ConfigureServices(builder.Services);
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
-
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-        app.MapControllers();
+        // Call Configure
+        startup.Configure(app, builder.Environment);
 
         app.Run();
-    }
-
-    private static void RegisterServices(IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddDbContext<BankingDbContext>(options =>
-        {
-            options.UseSqlServer(configuration.GetConnectionString("BankingDbConnection"));
-        });
-
-        DependencyContainer.RegisterServices(services);
     }
 }
