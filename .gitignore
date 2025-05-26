@@ -19,3 +19,4 @@ Domain/MicroRabbit.Domain.Core/obj/
 /MicroRabbit.Banking.Application/obj
 /MicroRabbit.Banking.Data/obj
 /MicroRabbit.Banking.Domain/obj
+/MicroRabbit.Banking.Api/bin/Debug/net8.0
