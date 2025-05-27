@@ -28,12 +28,7 @@ Domain/MicroRabbit.Domain.Core/obj/
 /MicroRabbit.Transfer.Data/bin/Debug/net8.0
 /MicroRabbit.Transfer.Data/obj
 /MicroRabbit.Transfer.Domain/obj
-/MicroRabbit.Transfer.Domain/bin/Debug/net8.0
+/MicroRabbit.Transfer.Domain/bin
+/MicroRabbit.Banking.Application/bin
+/MicroRabbit.Banking.Domain/bin
 /MicroRabbit.Banking.Application/bin/Debug/net8.0/MicroRabbit.Banking.Application.pdb
-/MicroRabbit.Banking.Application/bin/Debug/net8.0/MicroRabbit.Banking.Domain.pdb
-/MicroRabbit.Banking.Application/bin/Debug/net8.0/MicroRabbit.Domain.Core.pdb
-/MicroRabbit.Banking.Data/bin/Debug/net8.0/MicroRabbit.Banking.Data.pdb
-/MicroRabbit.Banking.Data/bin/Debug/net8.0/MicroRabbit.Banking.Domain.pdb
-/MicroRabbit.Banking.Data/bin/Debug/net8.0/MicroRabbit.Domain.Core.pdb
-/MicroRabbit.Banking.Domain/bin/Debug/net8.0/MicroRabbit.Banking.Domain.pdb
-/MicroRabbit.Banking.Domain/bin/Debug/net8.0/MicroRabbit.Domain.Core.pdb
