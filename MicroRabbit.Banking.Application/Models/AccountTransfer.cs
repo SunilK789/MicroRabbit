@@ -10,6 +10,6 @@ namespace MicroRabbit.Banking.Application.Models
     {
         public int FromAccount { get; set; }
         public int ToAccount { get; set; }
-        public decimal TransferAccount { get; set; }
+        public decimal TransferAmount { get; set; }
     }
 }
