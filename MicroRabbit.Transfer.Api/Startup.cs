@@ -1,4 +1,8 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using MediatR;
+using MicroRabbit.Infra.IoC;
+using MicroRabbit.Transfer.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace MicroRabbit.Transfer.Api
 {
@@ -18,17 +22,17 @@ namespace MicroRabbit.Transfer.Api
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Banking MicroService", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Transfer MicroService", Version = "v1" });
             });
 
-            //services.AddMediatR(typeof(Startup));
+            services.AddMediatR(typeof(Startup));
 
-            //services.AddDbContext<BankingDbContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
-            //});
+            services.AddDbContext<TransferDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("TransferDbConnection"));
+            });
 
-            //DependencyContainer.RegisterServices(services);
+            DependencyContainer.RegisterServices(services);
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
@@ -38,7 +42,7 @@ namespace MicroRabbit.Transfer.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
                 });
             }
 
