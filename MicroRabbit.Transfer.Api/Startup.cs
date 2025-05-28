@@ -1,6 +1,9 @@
 ﻿using MediatR;
+using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Infra.IoC;
 using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Transfer.Domain.EventHandlers;
+using MicroRabbit.Transfer.Domain.Events;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -46,11 +49,19 @@ namespace MicroRabbit.Transfer.Api
                 });
             }
 
+            ConfigureEventBus(app);
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
             app.MapControllers();
+        }
+
+        private void ConfigureEventBus(WebApplication app)
+        {
+            var eventBus = app.Services.GetRequiredService<IEventBus>();
+
+            eventBus.Subscribe<TransferCreatedEvent, TransferEventHandler>();
         }
     }
 }
